@@ -75,6 +75,16 @@ export default {
                 Find Event
               </router-link>
             </li>
+            <li>
+              <router-link to="/serviceIntake">
+                <span
+                  style="position: relative; top: 6px"
+                  class="material-icons"
+                  >services</span
+                >
+                Service Intake
+              </router-link>
+            </li>
           </ul>
         </nav>
       </header>
