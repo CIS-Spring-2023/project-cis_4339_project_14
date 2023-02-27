@@ -45,6 +45,12 @@ const routes = [
     name: 'serviceIntake',
     props: true,
     component: () => import('../components/serviceIntake.vue')
+  },
+  {
+    path: '/services',
+    name: 'services',
+    props: true,
+    component: () => import('../components/services.vue')
   }
 ]
 const router = createRouter({

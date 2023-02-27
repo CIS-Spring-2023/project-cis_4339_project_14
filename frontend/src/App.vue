@@ -56,6 +56,26 @@ export default {
               </router-link>
             </li>
             <li>
+              <router-link to="/serviceIntake">
+                <span
+                  style="position: relative; top: 6px"
+                  class="material-icons"
+                  >design_services</span
+                >
+                Service Intake
+              </router-link>
+            </li>
+            <li>
+              <router-link to="/services">
+                <span
+                  style="position: relative; top: 6px"
+                  class="material-icons"
+                  >library_add_check</span
+                >
+                Services
+              </router-link>
+            </li>
+            <li>
               <router-link to="/findclient">
                 <span
                   style="position: relative; top: 6px"
@@ -73,16 +93,6 @@ export default {
                   >search</span
                 >
                 Find Event
-              </router-link>
-            </li>
-            <li>
-              <router-link to="/serviceIntake">
-                <span
-                  style="position: relative; top: 6px"
-                  class="material-icons"
-                  >services</span
-                >
-                Service Intake
               </router-link>
             </li>
           </ul>
