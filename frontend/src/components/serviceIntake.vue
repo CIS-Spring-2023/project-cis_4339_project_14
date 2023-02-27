@@ -70,6 +70,16 @@ export default{
                     />
                     </label>
                 </div>
+                <div>
+                    <label for="statusOfService">Active:</label>
+                    <input type="checkbox" id="statusOfService" v-model="services.statusOfService" />
+                </div>
+                <!-- submit button -->
+                <div class="flex justify-between mt-10 mr-20">
+                    <button class="bg-red-700 text-white rounded" type="submit">
+                    Add Service
+                    </button>
+                </div>
             </form>
         </div>
     </main>
