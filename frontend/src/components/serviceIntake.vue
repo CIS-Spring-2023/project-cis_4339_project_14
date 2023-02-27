@@ -37,6 +37,8 @@ export default{
             <!-- <form @submit.prevent="addnewService"> -->
             <!-- faux frontend here for now -->    
             <form>
+
+                <!-- Intake service Name here -->
                 <div class="flex flex-col">
                     <label class="block">
                     <span class="text-gray-700">Service Name</span>
@@ -46,8 +48,12 @@ export default{
                         class="w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
                         v-model="services.nameOfService"
                     />
+                    <!-- Will do more stuff to process data here -->
                     </label>
                 </div>
+
+
+                <!-- Intake Company of the service provided here -->
                 <div class="flex flex-col">
                     <label class="block">
                     <span class="text-gray-700">Service Company</span>
@@ -57,8 +63,11 @@ export default{
                         class="w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
                         v-model="services.companyOfService"
                     />
+                    <!-- Will do more stuff to process data here -->
                     </label>
                 </div>
+
+                <!-- Intake service Description here -->
                 <div class="flex flex-col">
                     <label class="block">
                     <span class="text-gray-700">Service Description</span>
@@ -68,17 +77,23 @@ export default{
                         class="w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
                         v-model="services.descriptionOfService"
                     />
+                    <!-- Will do more stuff to process data here -->
                     </label>
                 </div>
+
+                <!-- checkbox to set a specific service as active -->
                 <div>
                     <label for="statusOfService">Active:</label>
                     <input type="checkbox" id="statusOfService" v-model="services.statusOfService" />
+                    <!-- Will do more stuff to process data here -->
                 </div>
+
                 <!-- submit button -->
                 <div class="flex justify-between mt-10 mr-20">
                     <button class="bg-red-700 text-white rounded" type="submit">
                     Add Service
                     </button>
+                    <!-- Will do more stuff to process data here -->
                 </div>
             </form>
         </div>
