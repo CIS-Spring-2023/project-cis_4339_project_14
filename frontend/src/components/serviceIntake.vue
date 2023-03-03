@@ -9,7 +9,7 @@ export default{
                 nameOfService: "",
                 descriptionOfService: "",
                 companyOfService: "",
-                statusOfService: false
+                // statusOfService: false
 
             }
         };
@@ -37,6 +37,7 @@ export default{
             <!-- <form @submit.prevent="addnewService"> -->
             <!-- faux frontend here for now -->    
             <form>
+                <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-x-6 gap-y-10">
 
                 <!-- Intake service Name here -->
                 <div class="flex flex-col">
@@ -66,30 +67,30 @@ export default{
                     <!-- Will do more stuff to process data here -->
                     </label>
                 </div>
-
+                </div>
+                    
                 <!-- Intake service Description here -->
                 <div class="flex flex-col">
                     <label class="block">
                     <span class="text-gray-700">Service Description</span>
-                    <span style="color: #ff0000">*</span>
                     <input
                         type="text"
                         class="w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
                         v-model="services.descriptionOfService"
                     />
+                    <p class="text-gray-600 text-xs italic">Something to describe what the service is about</p>
                     <!-- Will do more stuff to process data here -->
                     </label>
                 </div>
 
                 <!-- checkbox to set a specific service as active -->
-                <div>
+                <!-- <div>
                     <label for="statusOfService">Active:</label>
                     <input type="checkbox" id="statusOfService" v-model="services.statusOfService" />
-                    <!-- Will do more stuff to process data here -->
-                </div>
+                </div> -->
 
                 <!-- submit button -->
-                <div class="flex justify-between mt-10 mr-20">
+                <div class="flex justify-center mt-10 mr-20">
                     <button class="bg-red-700 text-white rounded" type="submit">
                     Add Service
                     </button>
