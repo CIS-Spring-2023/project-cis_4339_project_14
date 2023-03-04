@@ -6,10 +6,58 @@ export default {
   name: 'App',
   data() {
     return {
-      orgName: 'Dataplatform'
+      orgName: 'Dataplatform',
+      
+      /*
+      This is a global array to demonstrate front end services functionality
+      This will obviously be removed when in sprint 3 because by then we can 
+      work on the backend to store the data in a database instead
+      */
+      serviceArray: []
     }
   },
-  created() {
+  methods: {
+      // This method is global as of now because the global array serviceArray needs to be changed to demonstrate front-end functionality
+  addnewService(name, company, description, status){
+    this.serviceArray.push({
+      name: name,
+      company: company, 
+      description: description,
+      status: status
+    });
+
+
+
+    console.log(this.serviceArray);
+  },
+
+  // edit company name 
+  editServiceCompany(name, newVal){
+    const index = this.serviceArray.findIndex(service => service.nameOfService === name);
+
+    this.serviceArray[index].companyOfService = newVal;
+
+  },
+
+  // edit desctiption
+  editServiceDescription(name, newVal){
+    const index = this.serviceArray.findIndex(service => service.nameOfService === name);
+
+    this.serviceArray[index].descriptionOfService = newVal;
+
+  },
+
+  // edit status of service
+  editServiceStatus(name, newVal){
+    const index = this.serviceArray.findIndex(service => service.nameOfService === name);
+
+    this.serviceArray[index].status = newVal;
+
+  }
+    
+  },
+  
+  created() {   
     axios.get(`${apiURL}/org`).then((res) => {
       this.orgName = res.data.name
     })
@@ -72,7 +120,7 @@ export default {
                   class="material-icons"
                   >library_add_check</span
                 >
-                Services
+                Edit Services
               </router-link>
             </li>
             <li>

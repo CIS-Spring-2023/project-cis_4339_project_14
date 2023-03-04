@@ -9,20 +9,29 @@ export default{
                 nameOfService: "",
                 descriptionOfService: "",
                 companyOfService: "",
-                // statusOfService: false
+                status: false
 
             }
         };
     },
 
-    // methods: {
-    //     addnewService(){
-    //         // This method will be further implemented in the back end portion of this project
-    //         // because this method will need to lookup the current events stored and decide 
-    //         // if an even needs to be added or not
-    //     }
+    methods: {
+        //call global method to add new service to global array 
+        //then reset vars
+        addService(){
+            this.$root.addnewService(this.services.nameOfService,
+            this.services.companyOfService,
+            this.services.descriptionOfService,
+            this.services.status);
 
-    // }
+            this.services.nameOfService = "";
+            this.services.descriptionOfService = "";
+            this.services.companyOfService = "";
+            this.services.status = false;
+
+        }
+
+    }
 
 }
 </script>
@@ -34,9 +43,9 @@ export default{
         </h1>
         <div class="px-10 py-20">
             <!-- Prevent Reloading the page when new service is added will be further implemented sprint 3-->
-            <!-- <form @submit.prevent="addnewService"> -->
+            <form @submit.prevent="addService">
             <!-- faux frontend here for now -->    
-            <form>
+            <!-- <form> -->
                 <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-x-6 gap-y-10">
 
                 <!-- Intake service Name here -->
