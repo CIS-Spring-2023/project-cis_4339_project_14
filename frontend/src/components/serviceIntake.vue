@@ -19,7 +19,7 @@ export default{
         //call global method to add new service to global array 
         //then reset vars
         addService(){
-            this.$root.addnewService(this.services.nameOfService,
+            this.$root.addNewService(this.services.nameOfService,
             this.services.companyOfService,
             this.services.descriptionOfService,
             this.services.status);

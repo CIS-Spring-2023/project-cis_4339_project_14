@@ -18,7 +18,7 @@ export default {
   },
   methods: {
       // This method is global as of now because the global array serviceArray needs to be changed to demonstrate front-end functionality
-  addnewService(name, company, description, status){
+  addNewService(name, company, description, status){
     this.serviceArray.push({
       name: name,
       company: company, 
@@ -56,7 +56,7 @@ export default {
   }
     
   },
-  
+
   created() {   
     axios.get(`${apiURL}/org`).then((res) => {
       this.orgName = res.data.name
