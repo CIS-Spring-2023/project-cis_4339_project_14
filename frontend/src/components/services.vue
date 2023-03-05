@@ -74,9 +74,9 @@ export default {
         </div>
         </div>
 
-        <h2 class="font-bold text-4xl text-red-700 tracking-widest text-center mt-10">
+        <h6 class="font-bold text-4xl text-red-700 tracking-widest text-center mt-10">
             Edit Service
-        </h2>
+        </h6>
         <div class="px-10 py-20">
             <form @submit.prevent="editService">
                 <div class="flex flex-col">
@@ -92,6 +92,8 @@ export default {
                     </label>
                 </div>
 
+                <br>
+
                 <div class="flex flex-col">
                     <label class="block">
                     <span class="text-gray-700">Property to Change</span>
@@ -105,6 +107,8 @@ export default {
                     </label>
                 </div>
 
+                <br>
+
                 <div class="flex flex-col">
                     <label class="block">
                     <span class="text-gray-700">New Value</span>
@@ -117,6 +121,8 @@ export default {
                     <p class="text-gray-600 text-xs italic">Enter the new desired value</p>
                     </label>
                 </div>
+
+                <br>
 
                 <div class="flex justify-center mt-10 mr-20">
                     <button class="bg-red-700 text-white rounded" type="submit">
