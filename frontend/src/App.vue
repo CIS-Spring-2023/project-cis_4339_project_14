@@ -28,28 +28,30 @@ export default {
 
 
 
-    console.log(this.serviceArray);
+    // console.log(this.serviceArray);
   },
 
   // edit company name 
   editServiceCompany(name, newVal){
-    const index = this.serviceArray.findIndex(service => service.nameOfService === name);
+    const index = this.serviceArray.findIndex(service => service.name === name);
 
-    this.serviceArray[index].companyOfService = newVal;
+    this.serviceArray[index].company = newVal;
+
+    console.log(this.serviceArray);
 
   },
 
   // edit desctiption
   editServiceDescription(name, newVal){
-    const index = this.serviceArray.findIndex(service => service.nameOfService === name);
+    const index = this.serviceArray.findIndex(service => service.name === name);
 
-    this.serviceArray[index].descriptionOfService = newVal;
+    this.serviceArray[index].description = newVal;
 
   },
 
   // edit status of service
   editServiceStatus(name, newVal){
-    const index = this.serviceArray.findIndex(service => service.nameOfService === name);
+    const index = this.serviceArray.findIndex(service => service.name === name);
 
     this.serviceArray[index].status = newVal;
 
@@ -114,8 +116,8 @@ export default {
               </router-link>
             </li>
 
-            <li>
-              <router-link to="/editServices">
+            <!-- <li>
+              <router-link to="/">
                 <span
                   style="position: relative; top: 6px"
                   class="material-icons"
@@ -123,7 +125,7 @@ export default {
                 >
                 Edit Services
               </router-link>
-            </li>
+            </li> -->
 
             <li>
               <router-link to="/services">
