@@ -7,6 +7,7 @@ export default {
   },
   data(){
         return{
+            // This object stores what the user wants to change
             toChange:{
                 name: "",
                 toEdit: "",
@@ -18,6 +19,7 @@ export default {
 
   methods:{
     editService(){
+        // Call global function from App.vue based on what the user input is for toChange.toEdit
         if(this.toChange.toEdit === 'Company'){
             this.$root.editServiceCompany(this.toChange.name, this.toChange.newVal);
         }
@@ -29,6 +31,11 @@ export default {
         {
             this.$root.editServiceStatus(this.toChange.name, this.toChange.newVal);
         }
+
+        // reset object vars
+        this.toChange.name = "";
+        this.toChange.toEdit = "";
+        this.toChange.newVal = "";
     }
   }
 }
@@ -81,6 +88,7 @@ export default {
                         class="w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
                         v-model="toChange.name"
                     />
+                    <p class="text-gray-600 text-xs italic">Enter which service you would like to change</p>
                     </label>
                 </div>
 
@@ -93,6 +101,7 @@ export default {
                         class="w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
                         v-model="toChange.toEdit"
                     />
+                    <p class="text-gray-600 text-xs italic">Enter which property you would like to change (Case - sensitive)</p>
                     </label>
                 </div>
 
@@ -105,6 +114,7 @@ export default {
                         class="w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
                         v-model="toChange.newVal"
                     />
+                    <p class="text-gray-600 text-xs italic">Enter the new desired value</p>
                     </label>
                 </div>
 
@@ -115,15 +125,6 @@ export default {
                 </div>
 
             </form>
-        </div>
-        <!-- <form @submit.prevent="saveService">
-            <input placeholder="Name">
-            <input placeholder="Property to Change">
-            <input  placeholder="New Value">
-
-            <button type="submit">Save</button>
-        </form> -->
-        
-      
+        </div>  
     </div>
 </template>
