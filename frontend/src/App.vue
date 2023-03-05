@@ -32,6 +32,7 @@ export default {
   },
 
   // edit company name 
+  // again this is something that only demonstrates fron-end functionality and will be changed drastically in the next sprint
   editServiceCompany(name, newVal){
     const index = this.serviceArray.findIndex(service => service.name === name);
 
@@ -42,6 +43,7 @@ export default {
   },
 
   // edit desctiption
+  // again this is something that only demonstrates fron-end functionality and will be changed drastically in the next sprint
   editServiceDescription(name, newVal){
     const index = this.serviceArray.findIndex(service => service.name === name);
 
@@ -50,6 +52,7 @@ export default {
   },
 
   // edit status of service
+  // again this is something that only demonstrates fron-end functionality and will be changed drastically in the next sprint
   editServiceStatus(name, newVal){
     const index = this.serviceArray.findIndex(service => service.name === name);
 
