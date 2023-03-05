@@ -57,7 +57,7 @@ export default {
                 <th class="p-4 text-left">Name</th>
                 <th class="p-4 text-left">Company</th>
                 <th class="p-4 text-left">Description</th>
-                <th class="p-4 text-left">Active?</th>
+                <th class="p-4 text-left">Status</th>
               </tr>
             </thead>
             <tbody>

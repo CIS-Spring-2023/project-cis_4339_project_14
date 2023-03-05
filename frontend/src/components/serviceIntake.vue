@@ -9,7 +9,7 @@ export default{
                 nameOfService: "",
                 descriptionOfService: "",
                 companyOfService: "",
-                status: false
+                status: "Inactive"
 
             }
         };
@@ -27,7 +27,7 @@ export default{
             this.services.nameOfService = "";
             this.services.descriptionOfService = "";
             this.services.companyOfService = "";
-            this.services.status = false;
+            this.services.status = "Inactive";
 
         }
 
