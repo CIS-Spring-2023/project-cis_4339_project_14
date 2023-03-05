@@ -43,6 +43,7 @@ export default {
 
 <template>
     <div>
+        <!-- Below, a table is created to show the current services regardless of status -->
         <h1 class="font-bold text-4xl text-red-700 tracking-widest text-center mt-10">
         List of Services
         </h1>
@@ -73,7 +74,11 @@ export default {
         <br>
         </div>
         </div>
+        
 
+
+        <!-- Below, a form is presented for users to potentially edit services -->
+        <!-- ALL SERVICES START OFF AS INACTIVE, SO THE USER WILL HAVE TO SET THEM AS ACTIVE FIRST AT THE LEAST -->
         <h6 class="font-bold text-4xl text-red-700 tracking-widest text-center mt-10">
             Edit Service
         </h6>
