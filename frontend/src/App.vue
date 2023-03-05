@@ -120,7 +120,7 @@ export default {
                   class="material-icons"
                   >library_add_check</span
                 >
-                Edit Services
+                Services
               </router-link>
             </li>
             <li>
