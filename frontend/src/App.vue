@@ -113,6 +113,18 @@ export default {
                 Service Intake
               </router-link>
             </li>
+
+            <li>
+              <router-link to="/editServices">
+                <span
+                  style="position: relative; top: 6px"
+                  class="material-icons"
+                  >edit_note</span
+                >
+                Edit Services
+              </router-link>
+            </li>
+
             <li>
               <router-link to="/services">
                 <span
