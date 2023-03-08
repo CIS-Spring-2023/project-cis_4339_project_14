@@ -27,24 +27,37 @@
                 
             };
         },
+        computed: {
+            editLogin(){
+                return this.$root.editLogin
+            },
+
+            viewLogin(){
+                return this.$root.viewLogin
+            }
+        },
         methods: {
             viewerLogin(username, password) {
                 if(this.username !="" && this.password !=""){
                     if(this.username == this.$parent.viewerLogin.username && this.password == this.$parent.viewerLogin.password) {
-                        this.$emit("viewLogin",true);
+                        sessionStorage()
+                        ///this.$emit("viewLogin",true);
                     }
                     
                     }
-                }
-            },
-            editorLogin(username, password) {
+                    console.log(this.$root.viewLogin);
+                },
+                editorLogin(username, password) {
                 if(this.username !="" && this.password !=""){
                     if(this.username == this.$parent.editorLogin.username && this.password == this.$parent.editorLogin.password) {
                     this.$emit("editLogin",true);
                     }
                     
                 }
+                console.log(this.$root.editLogin);
             }
+            
+            }
+
         }
-    
 </script>
