@@ -20,15 +20,6 @@ export default {
       }
     }
   },
-  methods: {
-    checkViewLogin(status){
-      this.viewLogin = status;
-    },
-    checkEditLogin(status){
-      this.editLogin = status;
-    }
-
-  },
   created() {
     axios.get(`${apiURL}/org`).then((res) => {
       this.orgName = res.data.name
@@ -66,7 +57,7 @@ export default {
               </router-link>
             </li>
             <li>
-              <router-link to="/intakeform">
+              <router-link v-if="editLogin" to="/intakeform">
                 <span
                   style="position: relative; top: 6px"
                   class="material-icons"
@@ -76,7 +67,7 @@ export default {
               </router-link>
             </li>
             <li>
-              <router-link to="/eventform">
+              <router-link v-if="editLogin" to="/eventform">
                 <span
                   style="position: relative; top: 6px"
                   class="material-icons"
@@ -86,7 +77,7 @@ export default {
               </router-link>
             </li>
             <li>
-              <router-link to="/findclient">
+              <router-link v-if="editLogin || viewLogin" to="/findclient">
                 <span
                   style="position: relative; top: 6px"
                   class="material-icons"
@@ -96,7 +87,7 @@ export default {
               </router-link>
             </li>
             <li>
-              <router-link to="/findevents">
+              <router-link v-if="editLogin || viewLogin" to="/findevents">
                 <span
                   style="position: relative; top: 6px"
                   class="material-icons"
