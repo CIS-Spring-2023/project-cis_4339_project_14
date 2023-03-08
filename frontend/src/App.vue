@@ -6,8 +6,28 @@ export default {
   name: 'App',
   data() {
     return {
-      orgName: 'Dataplatform'
+      orgName: 'Dataplatform',
+
+      viewLogin: false,
+      editLogin: false,
+      viewerLogin: {
+          username: "viewer",
+          password: "viewpassword"
+      },
+      editorLogin: {
+        username: "editor",
+        password: "editpassword"
+      }
     }
+  },
+  methods: {
+    checkViewLogin(status){
+      this.viewLogin = status;
+    },
+    checkEditLogin(status){
+      this.editLogin = status;
+    }
+
   },
   created() {
     axios.get(`${apiURL}/org`).then((res) => {
@@ -25,6 +45,16 @@ export default {
         </section>
         <nav class="mt-10">
           <ul class="flex flex-col gap-4">
+            <li>
+              <router-link to="/login">
+                <span
+                  style ="position: relative; top: 6px" 
+                  class="material-icons"
+                  >login</span
+                  >
+                Login
+                </router-link>
+            </li>
             <li>
               <router-link to="/">
                 <span
@@ -87,7 +117,8 @@ export default {
         <h1 class="mr-20 text-3xl text-white">{{ this.orgName }}</h1>
       </section>
       <div>
-        <router-view></router-view>
+        <router-view>
+        </router-view>
       </div>
     </div>
   </main>
