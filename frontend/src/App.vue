@@ -14,6 +14,8 @@ export default {
       work on the backend to store the data in a database instead
       */
       serviceArray: []
+
+      
     }
   },
   methods: {
