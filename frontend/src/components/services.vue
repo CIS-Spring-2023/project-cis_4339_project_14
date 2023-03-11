@@ -93,7 +93,7 @@ export default {
                         class="w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
                         v-model="toChange.name"
                     />
-                    <p class="text-gray-600 text-xs italic">Enter which service you would like to change</p>
+                    <p class="text-gray-600 text-xs italic">Enter which service you would like to change (Case - sensitive)</p>
                     </label>
                 </div>
 
@@ -123,7 +123,7 @@ export default {
                         class="w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
                         v-model="toChange.newVal"
                     />
-                    <p class="text-gray-600 text-xs italic">Enter the new desired value</p>
+                    <p class="text-gray-600 text-xs italic">Enter the new desired value or Active/Inactive for status (Case - sensitive)</p>
                     </label>
                 </div>
 

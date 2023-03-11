@@ -16,7 +16,7 @@ export default{
     },
 
     methods: {
-        //call global method to add new service to global array 
+        //call global method to add new service to global array. This calls the global method which then proceeds to push values to the global array
         //then reset vars
         addService(){
             this.$root.addNewService(this.services.nameOfService,
@@ -103,7 +103,6 @@ export default{
                     <button class="bg-red-700 text-white rounded" type="submit">
                     Add Service
                     </button>
-                    <!-- Will do more stuff to process data here -->
                 </div>
             </form>
         </div>
