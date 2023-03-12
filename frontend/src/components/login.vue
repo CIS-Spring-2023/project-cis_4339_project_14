@@ -26,14 +26,14 @@
                 username:"",
                 password:"",
                 
-                wrongPassword: false
+                wrongPassword: false 
             };
         },
         methods: {
-            authenticate(){
+            authenticate(){ // this method is authenticating if the login input equals the right credentials depending one if the user is and editor or a viewer
                 if(this.username !="" && this.password !=""){
                     if(this.username == this.$root.viewerLogin.username && this.password == this.$root.viewerLogin.password){
-                        
+                        // viewer login authentication
                         this.$root.viewLogin = true;
                         sessionStorage.setItem("viewLogin", true);
                         
@@ -46,7 +46,7 @@
                     }
 
                     else if(this.username == this.$root.editorLogin.username && this.password == this.$root.editorLogin.password) {
-                        
+                        // editor login authentication
                         this.$root.editLogin = true;
                         sessionStorage.setItem("editLogin", true);
 

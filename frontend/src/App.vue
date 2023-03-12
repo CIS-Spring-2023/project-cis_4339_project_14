@@ -10,10 +10,14 @@ export default {
 
       viewLogin: false,
       editLogin: false,
+
+      //User that is a viewer username and password
       viewerLogin: {
           username: "viewer",
           password: "viewpassword"
       },
+
+      // User that is an editor username and password
       editorLogin: {
         username: "editor",
         password: "editpassword"
