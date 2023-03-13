@@ -18,7 +18,7 @@
     </div>
 </template>
 
-<script> // random comment
+<script> 
     export default{
         name: 'login',
         data() {
