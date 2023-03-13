@@ -1,4 +1,4 @@
-<template>
+<template> 
     <h1 class="font-bold text-4xl text-red-700 tracking-widest text-center mt-10">Login</h1>
     <div class="px-10 py-20">
         <div class="flex flex-col justify-center items-center">
@@ -18,7 +18,7 @@
     </div>
 </template>
 
-<script>
+<script> // random comment
     export default{
         name: 'login',
         data() {
