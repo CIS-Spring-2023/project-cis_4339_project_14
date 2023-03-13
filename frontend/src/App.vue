@@ -136,7 +136,7 @@ export default {
               </router-link>
             </li>
             <li>
-              <router-link to="/serviceIntake">
+              <router-link v-if="editLogin" to="/serviceIntake">
                 <span
                   style="position: relative; top: 6px"
                   class="material-icons"
@@ -158,7 +158,7 @@ export default {
             </li> -->
 
             <li>
-              <router-link to="/services">
+              <router-link v-if="editLogin" to="/services">
                 <span
                   style="position: relative; top: 6px"
                   class="material-icons"
