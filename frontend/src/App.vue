@@ -8,6 +8,7 @@ export default {
     return {
       orgName: 'Dataplatform',
 
+
       viewLogin: false,
       editLogin: false,
 
@@ -22,9 +23,63 @@ export default {
         username: "editor",
         password: "editpassword"
       }
+      
+      /*
+      This is a global array to demonstrate front end services functionality
+      This will obviously be removed when in sprint 3 because by then we can 
+      work on the backend to store the data in a database instead
+      */
+      serviceArray: []
+
     }
   },
-  created() {
+  methods: {
+      // This method is global as of now because the global array serviceArray needs to be changed to demonstrate front-end functionality
+  addNewService(name, company, description, status){
+    this.serviceArray.push({
+      name: name,
+      company: company, 
+      description: description,
+      status: status
+    });
+
+
+
+    // console.log(this.serviceArray);
+  },
+
+  // edit company name 
+  // again this is something that only demonstrates fron-end functionality and will be changed drastically in the next sprint
+  editServiceCompany(name, newVal){
+    const index = this.serviceArray.findIndex(service => service.name === name);
+
+    this.serviceArray[index].company = newVal;
+
+    console.log(this.serviceArray);
+
+  },
+
+  // edit desctiption
+  // again this is something that only demonstrates fron-end functionality and will be changed drastically in the next sprint
+  editServiceDescription(name, newVal){
+    const index = this.serviceArray.findIndex(service => service.name === name);
+
+    this.serviceArray[index].description = newVal;
+
+  },
+
+  // edit status of service
+  // again this is something that only demonstrates fron-end functionality and will be changed drastically in the next sprint
+  editServiceStatus(name, newVal){
+    const index = this.serviceArray.findIndex(service => service.name === name);
+
+    this.serviceArray[index].status = newVal;
+
+  }
+    
+  },
+
+  created() {   
     axios.get(`${apiURL}/org`).then((res) => {
       this.orgName = res.data.name
     })
@@ -81,7 +136,39 @@ export default {
               </router-link>
             </li>
             <li>
-              <router-link v-if="editLogin || viewLogin" to="/findclient">
+              <router-link to="/serviceIntake">
+                <span
+                  style="position: relative; top: 6px"
+                  class="material-icons"
+                  >design_services</span
+                >
+                Service Intake
+              </router-link>
+            </li>
+
+            <!-- <li>
+              <router-link to="/">
+                <span
+                  style="position: relative; top: 6px"
+                  class="material-icons"
+                  >edit_note</span
+                >
+                Edit Services
+              </router-link>
+            </li> -->
+
+            <li>
+              <router-link to="/services">
+                <span
+                  style="position: relative; top: 6px"
+                  class="material-icons"
+                  >library_add_check</span
+                >
+                Services
+              </router-link>
+            </li>
+            <li>
+             <router-link v-if="editLogin || viewLogin" to="/findclient">
                 <span
                   style="position: relative; top: 6px"
                   class="material-icons"
