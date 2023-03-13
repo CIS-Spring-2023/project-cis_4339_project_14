@@ -41,6 +41,12 @@ const routes = [
     component: () => import('../components/eventDetails.vue')
   },
   {
+
+    path: '/login',
+    name: 'login',
+    component: () => import('../components/login.vue')
+  },
+  {
     path: '/serviceIntake',
     name: 'serviceIntake',
     props: true,
@@ -52,13 +58,6 @@ const routes = [
     props: true,
     component: () => import('../components/services.vue')
   }
-
-  // {
-  //   path: '/editServices',
-  //   name: 'editServices',
-  //   props: true,
-  //   component: () => import('../components/editServices.vue')
-  // }
 ]
 const router = createRouter({
   history: createWebHistory(),

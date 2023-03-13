@@ -7,6 +7,22 @@ export default {
   data() {
     return {
       orgName: 'Dataplatform',
+
+
+      viewLogin: false,
+      editLogin: false,
+
+      //User that is a viewer username and password
+      viewerLogin: {
+          username: "viewer",
+          password: "viewpassword"
+      },
+
+      // User that is an editor username and password
+      editorLogin: {
+        username: "editor",
+        password: "editpassword"
+      }
       
       /*
       This is a global array to demonstrate front end services functionality
@@ -15,7 +31,6 @@ export default {
       */
       serviceArray: []
 
-      
     }
   },
   methods: {
@@ -81,6 +96,16 @@ export default {
         <nav class="mt-10">
           <ul class="flex flex-col gap-4">
             <li>
+              <router-link to="/login">
+                <span
+                  style ="position: relative; top: 6px" 
+                  class="material-icons"
+                  >login</span
+                  >
+                Login
+                </router-link>
+            </li>
+            <li>
               <router-link to="/">
                 <span
                   style="position: relative; top: 6px"
@@ -91,7 +116,7 @@ export default {
               </router-link>
             </li>
             <li>
-              <router-link to="/intakeform">
+              <router-link v-if="editLogin" to="/intakeform">
                 <span
                   style="position: relative; top: 6px"
                   class="material-icons"
@@ -101,7 +126,7 @@ export default {
               </router-link>
             </li>
             <li>
-              <router-link to="/eventform">
+              <router-link v-if="editLogin" to="/eventform">
                 <span
                   style="position: relative; top: 6px"
                   class="material-icons"
@@ -143,7 +168,7 @@ export default {
               </router-link>
             </li>
             <li>
-              <router-link to="/findclient">
+             <router-link v-if="editLogin || viewLogin" to="/findclient">
                 <span
                   style="position: relative; top: 6px"
                   class="material-icons"
@@ -153,7 +178,7 @@ export default {
               </router-link>
             </li>
             <li>
-              <router-link to="/findevents">
+              <router-link v-if="editLogin || viewLogin" to="/findevents">
                 <span
                   style="position: relative; top: 6px"
                   class="material-icons"
@@ -174,7 +199,8 @@ export default {
         <h1 class="mr-20 text-3xl text-white">{{ this.orgName }}</h1>
       </section>
       <div>
-        <router-view></router-view>
+        <router-view>
+        </router-view>
       </div>
     </div>
   </main>
