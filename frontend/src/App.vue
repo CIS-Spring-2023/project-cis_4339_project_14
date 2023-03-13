@@ -22,7 +22,7 @@ export default {
       editorLogin: {
         username: "editor",
         password: "editpassword"
-      }
+      },
       
       /*
       This is a global array to demonstrate front end services functionality
