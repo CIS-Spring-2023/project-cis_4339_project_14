@@ -2,12 +2,15 @@
 import { DateTime } from 'luxon'
 import axios from 'axios'
 import AttendanceChart from './barChart.vue'
+import clientChart from './clientChart.vue'
+
 const apiURL = import.meta.env.VITE_ROOT_API
 
 export default {
   components: {
-    AttendanceChart
-  },
+    AttendanceChart,
+    clientChart
+},
   data() {
     return {
       recentEvents: [],
@@ -104,13 +107,19 @@ export default {
               </tr>
             </tbody>
           </table>
+          
           <div>
-            <AttendanceChart
+            <!-- <AttendanceChart
               v-if="!loading && !error"
               :label="labels"
               :chart-data="chartData"
-            ></AttendanceChart>
-
+            ></AttendanceChart> -->
+            <clientChart></clientChart>
+            <div>
+              <div style="width: 500px;"><canvas id="clientChart"></canvas></div>
+              <!--<script type="module" src="Doughnut.js"></script>-->
+            </div>
+            
             <!-- Start of loading animation -->
             <div class="mt-40" v-if="loading">
               <p
