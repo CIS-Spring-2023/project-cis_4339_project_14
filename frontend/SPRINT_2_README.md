@@ -44,3 +44,11 @@ Password: viewpassword
 2. https://www.w3schools.com/js/js_graphics_chartjs.asp
 3. https://blog.logrocket.com/creating-chart-components-in-vue-with-chart-js/
 4. https://www.chartjs.org/docs/latest/charts/doughnut.html
+
+### References for Dashboard (Sprint 2)
+1. https://www.vuescript.com/simple-table-component/
+2. https://vuejs.org/guide/essentials/list.html
+3. https://vuejs.org/guide/essentials/computed.html
+
+
+
