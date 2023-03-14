@@ -22,3 +22,4 @@ Password: viewpassword
 ### References for Login code (Sprint 2)
 1. https://router.vuejs.org/guide/advanced/navigation-guards.html
 2. https://www.thepolyglotdeveloper.com/2018/04/simple-user-login-vuejs-web-application/
+3. https://www.w3schools.com/jsref/prop_win_sessionstorage.asp

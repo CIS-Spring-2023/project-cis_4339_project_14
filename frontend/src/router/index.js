@@ -14,7 +14,11 @@ const routes = [
     //navigation gaurds are put in place in every path to ensure unauthorized users
     // don't gain access to certain pages depending on if they're a viewer or editor
     beforeEnter(to, from, next){
-      if (sessionStorage.getItem('editLogin')== true){
+      // get editLogin from session storage and store it in status
+      const status = sessionStorage.getItem('editLogin');
+
+      // if status is true continue to destination. Otherwise redirect to login page
+      if (status){
         next();
       }
       else{
@@ -29,7 +33,12 @@ const routes = [
     path: '/findclient',
     name: 'findclient',
     beforeEnter(to, from, next){
-      if (sessionStorage.getItem('editLogin') == true || sessionStorage.getItem('viewLogin') == true){
+      // get editLogin AND viewLogin from session storage and store it in status and status2 respectively
+      // We need to check both variables because the user should be able to see this page if the user is a viewer or and editor
+      // check the two variables. If any of them are true, proceed to destination. Otherwise, redirect to login page
+      const status = sessionStorage.getItem('viewLogin');
+      const status2 = sessionStorage.getItem('editLogin');
+      if (status || status2){
         next();
       }
       else{
@@ -45,8 +54,12 @@ const routes = [
     path: '/updateclient/:id',
     name: 'updateclient',
     props: true,
+    
     beforeEnter(to, from, next){
-      if (sessionStorage.getItem('editLogin')== true){
+      // get editLogin from session storage and store it in status
+      // if status is true continue to destination. Otherwise redirect to login page
+      const status = sessionStorage.getItem('editLogin');
+      if (status){
         next();
       }
       else{
@@ -60,7 +73,10 @@ const routes = [
     path: '/eventform',
     name: 'eventform',
     beforeEnter(to, from, next){
-      if (sessionStorage.getItem('editLogin')== true){
+      // get editLogin from session storage and store it in status
+      // if status is true continue to destination. Otherwise redirect to login page
+      const status = sessionStorage.getItem('editLogin');
+      if (status){
         next();
       }
       else{
@@ -74,7 +90,13 @@ const routes = [
     path: '/findevents',
     name: 'findevents',
     beforeEnter(to, from, next){
-      if (sessionStorage.getItem('editLogin') == true || sessionStorage.getItem('viewLogin') == true){
+      // get editLogin AND viewLogin from session storage and store it in status and status2 respectively
+      // We need to check both variables because the user should be able to see this page if the user is a viewer or and editor
+      // check the two variables. If any of them are true, proceed to destination. Otherwise, redirect to login page
+      const status = sessionStorage.getItem('viewLogin');
+      const status2 = sessionStorage.getItem('editLogin');
+
+      if (status || status2){
         next();
       }
       else{
@@ -90,7 +112,10 @@ const routes = [
     name: 'eventdetails',
     props: true,
     beforeEnter(to, from, next){
-      if (sessionStorage.getItem('editLogin')== true){
+      // get editLogin from session storage and store it in status
+      // if status is true continue to destination. Otherwise redirect to login page
+      const status = sessionStorage.getItem('editLogin');
+      if (status){
         next();
       }
       else{
@@ -111,7 +136,10 @@ const routes = [
     name: 'serviceIntake',
     props: true,
     beforeEnter(to, from, next){
-      if (sessionStorage.getItem('editLogin')== true){
+      // get editLogin from session storage and store it in status
+      // if status is true continue to destination. Otherwise redirect to login page
+      const status = sessionStorage.getItem('editLogin');
+      if (status){
         next();
       }
       else{
@@ -126,7 +154,11 @@ const routes = [
     name: 'services',
     props: true,
     beforeEnter(to, from, next){
-      if (sessionStorage.getItem('editLogin')== true){
+      // get editLogin from session storage and store it in status
+      // if status is true continue to destination. Otherwise redirect to login page
+      const status = sessionStorage.getItem('editLogin');
+      
+      if (status){
         next();
       }
       else{
