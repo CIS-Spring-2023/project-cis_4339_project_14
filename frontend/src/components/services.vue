@@ -82,8 +82,9 @@ export default {
         <h6 class="font-bold text-4xl text-red-700 tracking-widest text-center mt-10">
             Edit Service
         </h6>
+        <p class="font-bold text-4xl text-red-700 tracking-widest text-center mt-10" v-if="this.$root.editLogin == false"> NEEDS EDIT ACCESS </p>
         <div class="px-10 py-20">
-            <form @submit.prevent="editService">
+            <form v-if='this.$root.editLogin == true' @submit.prevent="editService">
                 <div class="flex flex-col">
                     <label class="block">
                     <span class="text-gray-700">Service Name</span>

@@ -40,6 +40,7 @@
                     if(this.username == this.$root.viewerLogin.username && this.password == this.$root.viewerLogin.password){
                         // viewer login authentication
                         this.$root.viewLogin = true;
+                        this.$root.editLogin = false;
                         sessionStorage.setItem("viewLogin", true);
                         
                         // set wrongPassword to false and correct password to true. This is used for the HTML portion and indicates if the user login was successful or not
@@ -52,6 +53,7 @@
                     else if(this.username == this.$root.editorLogin.username && this.password == this.$root.editorLogin.password) {
                         // editor login authentication
                         this.$root.editLogin = true;
+                        this.$root.viewLogin = false;
                         sessionStorage.setItem("editLogin", true);
 
 
