@@ -23,3 +23,9 @@ Password: viewpassword
 1. https://router.vuejs.org/guide/advanced/navigation-guards.html
 2. https://www.thepolyglotdeveloper.com/2018/04/simple-user-login-vuejs-web-application/
 3. https://www.w3schools.com/jsref/prop_win_sessionstorage.asp
+
+### References for Dashboard (Sprint 2)
+1. https://www.chartjs.org/docs/latest/getting-started/usage.html
+2. https://www.w3schools.com/js/js_graphics_chartjs.asp
+3. https://blog.logrocket.com/creating-chart-components-in-vue-with-chart-js/
+4. https://www.chartjs.org/docs/latest/charts/doughnut.html
