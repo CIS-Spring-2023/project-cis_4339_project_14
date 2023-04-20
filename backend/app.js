@@ -18,7 +18,7 @@ app.use(
 
 // sets up mongoose for the mongoDB connection
 mongoose
-  .connect(process.env.MONGO_URL)
+  .connect('mongodb+srv://admin:test123@cis4339cluster.urmwerk.mongodb.net/?retryWrites=true&w=majority')
   .then(() => {
     console.log('Database connection Success!')
   })
