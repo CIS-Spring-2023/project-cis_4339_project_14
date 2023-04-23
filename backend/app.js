@@ -15,10 +15,10 @@ app.use(
     origin: '*'
   })
 )
-
+console.log(process.env.MONGO_URL)
 // sets up mongoose for the mongoDB connection
 mongoose
-  .connect('mongodb+srv://admin:test123@cis4339cluster.urmwerk.mongodb.net/?retryWrites=true&w=majority')
+  .connect(process.env.MONGO_URL)
   .then(() => {
     console.log('Database connection Success!')
   })
@@ -27,7 +27,7 @@ mongoose
   })
 
 // declare port number for the api
-const PORT = 3000
+const PORT = process.env.PORT || 27017
 
 // setup and access request body
 app.use(express.json())
@@ -37,6 +37,7 @@ app.use(morgan('dev'))
 app.use('/clients', require('./routes/clients'))
 app.use('/events', require('./routes/events'))
 app.use('/org', require('./routes/org'))
+app.use('/services', require('./routes/services'))
 
 app.listen(PORT, () => {
   console.log(`Server listening on port ${PORT}`)
