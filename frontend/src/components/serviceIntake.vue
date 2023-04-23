@@ -6,9 +6,9 @@ export default{
     data(){
         return{
             services: {
-                nameOfService: "",
-                descriptionOfService: "",
-                companyOfService: "",
+                name: "",
+                description: "",
+                company: "",
                 status: "Inactive"
 
             }
@@ -19,16 +19,27 @@ export default{
         //call global method to add new service to global array. This calls the global method which then proceeds to push values to the global array
         //then reset vars
         addService(){
-            this.$root.addNewService(this.services.nameOfService,
-            this.services.companyOfService,
-            this.services.descriptionOfService,
-            this.services.status);
+            // this.$root.addNewService(this.services.nameOfService,
+            // this.services.companyOfService,
+            // this.services.descriptionOfService,
+            // this.services.status);
 
-            this.services.nameOfService = "";
-            this.services.descriptionOfService = "";
-            this.services.companyOfService = "";
-            this.services.status = "Inactive";
+            // this.services.nameOfService = "";
+            // this.services.descriptionOfService = "";
+            // this.services.companyOfService = "";
+            // this.services.status = "Inactive";
+            axios
+            .post(`${apiURL}/services/add`, this.services)
+            .then(() => {
+                alert('Service has been added.')
+            })
+            .catch((error) => {
+                console.log(error)
+            })
 
+            this.services.name = "";
+            this.services.description = "";
+            this.services.company = "";
         }
 
     }
@@ -56,7 +67,7 @@ export default{
                     <input
                         type="text"
                         class="w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
-                        v-model="services.nameOfService"
+                        v-model="services.name"
                     />
                     <!-- Will do more stuff to process data here -->
                     </label>
@@ -71,7 +82,7 @@ export default{
                     <input
                         type="text"
                         class="w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
-                        v-model="services.companyOfService"
+                        v-model="services.company"
                     />
                     <!-- Will do more stuff to process data here -->
                     </label>
@@ -85,7 +96,7 @@ export default{
                     <input
                         type="text"
                         class="w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
-                        v-model="services.descriptionOfService"
+                        v-model="services.description"
                     />
                     <p class="text-gray-600 text-xs italic">Something to describe what the service is about</p>
                     <!-- Will do more stuff to process data here -->

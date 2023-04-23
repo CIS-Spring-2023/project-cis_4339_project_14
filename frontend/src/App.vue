@@ -83,6 +83,17 @@ export default {
     axios.get(`${apiURL}/org`).then((res) => {
       this.orgName = res.data.name
     })
+
+    axios
+      .get(`${apiURL}/services/all`)
+      .then((res) => {
+          this.serviceArray = res.data
+          alert('In Memory object created')
+          console.log(this.serviceArray)
+      })
+      .catch((error) => {
+          console.log(error)
+      })
   }
 }
 </script>
