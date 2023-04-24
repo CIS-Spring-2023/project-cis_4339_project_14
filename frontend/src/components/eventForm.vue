@@ -10,6 +10,7 @@ export default {
   },
   data() {
     return {
+      checkedServices: [],
       // removed unnecessary extra array to track services
       event: {
         name: '',
@@ -28,6 +29,7 @@ export default {
   },
   methods: {
     async handleSubmitForm() {
+      this.event.services = this.checkedServices.map(service => service.name)
       console.log(this.event.services)
       // Checks to see if there are any errors in validation
       const isFormCorrect = await this.v$.$validate()
@@ -143,7 +145,7 @@ export default {
             <label>Services Offered at Event</label>
             <div v-for="(service, index) in this.$root.serviceArray.filter(service => service.status === true)" :key="index">
               <label>
-                <input type="checkbox" :value="service" v-model="this.event.services">
+                <input type="checkbox" :value="service" v-model="this.checkedServices">
                 {{ service.name }}
               </label>
             </div>

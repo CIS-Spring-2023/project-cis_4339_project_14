@@ -161,7 +161,7 @@ export default {
                             v-bind:checked="selectedService.status"
                             v-on:change="selectedService.status = !selectedService.status"
                         />
-                        <span class="ml-2 text-gray-700">Status</span>
+                        <span class="ml-2 text-gray-700">Active</span>
                     </label>
                 </div>
 
