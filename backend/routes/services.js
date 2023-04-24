@@ -59,11 +59,12 @@ router.post('/add',(req,res, next) =>{
 })
 
 
-router.put('/update/:id', (req, res, next) => {
-  services.findByIdAndUpdate(req.params.id, req.body, (error, data) => {
+router.put('/update', (req, res, next) => {
+  services.updateOne({_id: req.body._id}, { $set: { "name": req.body.name , "company": req.body.company, "description": req.body.description, "status": req.body.status} }, (error, data) => {
     if (error) {
       return next(error)
     } else {
+      console.log(data)
       res.json(data)
     }
   })

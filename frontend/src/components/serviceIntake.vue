@@ -9,7 +9,7 @@ export default{
                 name: "",
                 description: "",
                 company: "",
-                status: "Inactive"
+                status: false
 
             }
         };
