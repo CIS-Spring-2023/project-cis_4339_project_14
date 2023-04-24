@@ -40,6 +40,8 @@ export default{
             this.services.name = "";
             this.services.description = "";
             this.services.company = "";
+
+            this.$root.buildServicesInMemory();
         }
 
     }

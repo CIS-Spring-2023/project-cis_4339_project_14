@@ -60,7 +60,7 @@ router.post('/add',(req,res, next) =>{
 
 
 router.put('/update', (req, res, next) => {
-  services.updateOne({_id: req.body._id}, { $set: { "name": req.body.name , "company": req.body.company, "description": req.body.description, "status": req.body.status} }, (error, data) => {
+  services.findByIdAndUpdate(req.body.data._id , { "name": req.body.data.name , "company": req.body.data.company, "description": req.body.data.description, "status": req.body.data.status} , (error, data) => {
     if (error) {
       return next(error)
     } else {

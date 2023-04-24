@@ -10,7 +10,6 @@ export default {
 //   },
   data(){
         return{
-            services: this.$root.serviceArray,
             // This object stores what the user wants to change
             selectedService: {}
 
@@ -18,6 +17,10 @@ export default {
     },
 
   methods:{
+    refreshTable(){
+        this.$root.buildServicesInMemory();
+    },
+
     selectService(index){
         console.log("got to selecservuce")
         this.selectedService = Object.assign({}, this.$root.serviceArray[index]);
@@ -50,6 +53,7 @@ export default {
             .catch((error) => {
                 console.log(error)
         })
+
     }
   }
 }
@@ -76,7 +80,7 @@ export default {
               </tr>
             </thead>
             <tbody>
-                <tr v-for="(service, index) in services" :key="index" @click="selectService(index)">
+                <tr v-for="(service, index) in this.$root.serviceArray" :key="index" @click="selectService(index)">
                     <td>{{ service.name }}</td>
                     <td>{{ service.company }}</td>
                     <td>{{ service.description }}</td>
@@ -84,6 +88,11 @@ export default {
                 </tr>
             </tbody>
         </table>
+        <div class="flex justify-center mt-10 mr-20">
+            <button @click="refreshTable()" class="bg-red-700 text-white rounded" type="submit">
+            Refresh
+            </button>
+        </div>
         <br>
         <br>
         </div>

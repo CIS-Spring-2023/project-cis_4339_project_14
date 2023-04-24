@@ -75,15 +75,9 @@ export default {
 
     this.serviceArray[index].status = newVal;
 
-  }
-    
   },
 
-  created() {   
-    axios.get(`${apiURL}/org`).then((res) => {
-      this.orgName = res.data.name
-    })
-
+  buildServicesInMemory(){
     axios
       .get(`${apiURL}/services/all`)
       .then((res) => {
@@ -94,6 +88,16 @@ export default {
       .catch((error) => {
           console.log(error)
       })
+  }
+    
+  },
+
+  created() {   
+    axios.get(`${apiURL}/org`).then((res) => {
+      this.orgName = res.data.name
+    })
+    this.buildServicesInMemory();
+    
   }
 }
 </script>
