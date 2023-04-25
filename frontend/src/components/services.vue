@@ -17,9 +17,9 @@ export default {
     },
 
   methods:{
-    refreshTable(){
-        this.$root.buildServicesInMemory();
-    },
+    // refreshTable(){
+    //     this.$root.buildServicesInMemory();
+    // },
 
     selectService(index){
         console.log("got to selecservuce")
@@ -89,11 +89,11 @@ export default {
                 </tr>
             </tbody>
         </table>
-        <div class="flex justify-center mt-10 mr-20">
+        <!-- <div class="flex justify-center mt-10 mr-20">
             <button @click="refreshTable()" class="bg-red-700 text-white rounded" type="submit">
             Refresh
             </button>
-        </div>
+        </div> -->
         <br>
         <br>
         </div>
