@@ -169,6 +169,27 @@ const routes = [
 
     },
     component: () => import('../components/services.vue')
+  },
+  {
+    path: '/serviceIntake',
+    name: 'serviceIntake',
+    props: true,
+    beforeEnter(to, from, next){
+      // get editLogin AND viewLogin from session storage and store it in status and status2 respectively
+      // We need to check both variables because the user should be able to see this page if the user is a viewer or and editor
+      // check the two variables. If any of them are true, proceed to destination. Otherwise, redirect to login page
+      // const status = sessionStorage.getItem('viewLogin');
+      const status2 = sessionStorage.getItem('editLogin');
+      
+      if (status2){
+        next();
+      }
+      else{
+        next('/login');
+      }
+
+    },
+    component: () => import('../components/serviceIntake.vue')
   }
 ]
 const router = createRouter({

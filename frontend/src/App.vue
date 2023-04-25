@@ -82,7 +82,7 @@ export default {
       .get(`${apiURL}/services/all`)
       .then((res) => {
           this.serviceArray = res.data
-          alert('In Memory object created')
+          alert('Service loaded in memory')
           console.log(this.serviceArray)
       })
       .catch((error) => {

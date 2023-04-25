@@ -48,7 +48,8 @@ export default {
         axios
             .put(`${apiURL}/services/update`, {data: this.selectedService})
             .then(() => {
-                alert('Service has been updated')
+                alert('Service has been updated. Services table should be refreshed')
+                this.$root.buildServicesInMemory();
             })
             .catch((error) => {
                 console.log(error)
