@@ -109,11 +109,11 @@ export default {
           </table>
           
           <div>
-            <!-- <AttendanceChart
+            <AttendanceChart
               v-if="!loading && !error"
               :label="labels"
               :chart-data="chartData"
-            ></AttendanceChart> -->
+            ></AttendanceChart>
             <clientChart></clientChart>
             <div>
               <div style="width: 500px;"><canvas id="clientChart"></canvas></div>
