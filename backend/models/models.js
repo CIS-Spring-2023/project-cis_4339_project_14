@@ -155,11 +155,19 @@ const servicesSchema = new Schema(
 
   }
 )
+
+// creating user schema for login info
+const userSchema = new Schema(
+  {
+    username: {type: String},
+    password: {type: String}
+  }
+)
 // create models from mongoose schemas
 const clients = mongoose.model('client', clientDataSchema)
 const orgs = mongoose.model('org', orgDataSchema)
 const events = mongoose.model('event', eventDataSchema)
 const services = mongoose.model('services', servicesSchema)
-
+const users = mongoose.model('users', userSchema)
 // package the models in an object to export
-module.exports = { clients, orgs, events, services }
+module.exports = { clients, orgs, events, services, users }
