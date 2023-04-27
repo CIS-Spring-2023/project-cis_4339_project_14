@@ -4,6 +4,7 @@ const apiURL =
 
 // var counts = [];
 // var zips = []
+//api call to retrieve client zipcodes
 export function getClientData() {
     axios.get(`${apiURL}/clients/zips`)
         .then((res) => {
