@@ -11,7 +11,8 @@ router.get('/zips', async(req, res, next) => {
     try {
         const zips = await clients.distinct('address.zip');
         uniqueZips.push(...zips);
-
+        
+        //iterates through zip codes, calls getCount function to track instances of each client zip code
         for (let i = 0; i < uniqueZips.length; i++) {
             try {
                 const data = await getCount(uniqueZips[i]);
