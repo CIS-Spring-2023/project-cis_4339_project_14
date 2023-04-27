@@ -1,5 +1,6 @@
 <script>
 import axios from 'axios'
+import { getClientData } from './assets/clientData'
 const apiURL = import.meta.env.VITE_ROOT_API
 
 export default {
@@ -96,6 +97,7 @@ export default {
     axios.get(`${apiURL}/org`).then((res) => {
       this.orgName = res.data.name
     })
+    getClientData();
     this.buildServicesInMemory();
     
   }
