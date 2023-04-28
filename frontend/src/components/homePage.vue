@@ -3,6 +3,7 @@ import { DateTime } from 'luxon'
 import axios from 'axios'
 import AttendanceChart from './barChart.vue'
 import clientChart from './clientChart.vue'
+import { getClientData } from '../assets/clientData'
 
 const apiURL = import.meta.env.VITE_ROOT_API
 
@@ -22,6 +23,7 @@ export default {
   },
   mounted() {
     this.getAttendanceData()
+    getClientData()
   },
   methods: {
     async getAttendanceData() {
