@@ -54,7 +54,7 @@ export default{
         <h1 class="font-bold text-4xl text-red-700 tracking-widest text-center mt-10">
             Services Form
         </h1>
-        <div class="px-10 py-20">
+        <div class="px-10 py-20 flex justify-center items-center">
             <!-- Prevent Reloading the page when new service is added will be further implemented sprint 3-->
             <form @submit.prevent="addService">
             <!-- faux frontend here for now -->    
