@@ -107,13 +107,20 @@ export default {
               </tr>
             </tbody>
           </table>
-          
+          <br>
+          <br>
+          <br>
           <div>
+            <p style="text-align: center;">Attendance Chart</p>
             <AttendanceChart
               v-if="!loading && !error"
               :label="labels"
               :chart-data="chartData"
             ></AttendanceChart>
+
+            <br>
+            <br>
+            <p style="text-align: center;">Client Zip codes</p>
             <clientChart></clientChart>
             <div>
               <div style="width: 500px;"><canvas id="clientChart"></canvas></div>
