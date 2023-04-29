@@ -1,6 +1,11 @@
 ###  Back-end Implemetation (Sprint 3)
 
 
+BACKEND API DOCUMENTATION CAN BE FOUND AT:
+
+    https://documenter.getpostman.com/view/23609726/2s93eR6GrM
+
+
 PLEASE MAKE SURE YOU HAVE THE FOLLOWING UNDER THE "backend" FOLDER
 
 1. .env file with parameters: 
@@ -12,6 +17,7 @@ PLEASE MAKE SURE YOU HAVE THE FOLLOWING UNDER THE "backend" FOLDER
 2. open a new terminal
 3. enter "cd backend"
 4. enter "npm install"
+5. run with "node app.js"
 
 PLEASE ALSO MAKE SURE YOU HAVE THE FOLLOWING UNDER THE "frontend" FOLDER
 
@@ -22,6 +28,7 @@ PLEASE ALSO MAKE SURE YOU HAVE THE FOLLOWING UNDER THE "frontend" FOLDER
 2. open a new terminal
 3. enter "cd frontend"
 4. enter "npm install"
+5. run with "npm run dev"
 
 
 
