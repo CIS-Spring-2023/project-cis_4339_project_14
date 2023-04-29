@@ -5,10 +5,13 @@ const org = process.env.ORG
 
 const { services } = require('../models/models')
 
+// Test route and should be ignored
 router.get('/test', (req,res) =>{
   getListOfActiveServiceNames();
 })
 
+
+// Route to get list of all services from the services collection from MongoDB
 router.get('/all', (req, res, next) => {
   services
     .find({ org: org }, (error, data) => {
@@ -20,7 +23,7 @@ router.get('/all', (req, res, next) => {
     })
 })
 
-
+// Route to get a list of only active services. This route is used for the event creation page where the user only needs to see active services
 router.get('/active', (req, res) => {
   const dbQuery = { org: org }
   const activeServices = []
@@ -42,6 +45,7 @@ router.get('/active', (req, res) => {
 })
 
 
+// POST route to allow the insertion of a new service to MongoDB collection
 router.post('/add',(req,res, next) =>{
   const newService = req.body
   newService.org = org
@@ -59,6 +63,8 @@ router.post('/add',(req,res, next) =>{
 })
 
 
+
+// PUT route to update a service with a given ID and update properties: name, company, description, and/or status
 router.put('/update', (req, res, next) => {
   services.findByIdAndUpdate(req.body.data._id , { "name": req.body.data.name , "company": req.body.data.company, "description": req.body.data.description, "status": req.body.data.status} , (error, data) => {
     if (error) {

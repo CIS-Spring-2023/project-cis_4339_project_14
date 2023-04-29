@@ -129,7 +129,13 @@ const eventDataSchema = new Schema(
   }
 )
 
+// Below are the two new Schemas created for Sprint 3 
 
+
+// The servicesSchema outlines what the services collection should look like on MongoDB
+// The ID is uniquely generated
+// There is a org property since each organization can have different services
+// the rest are the name, company, description, and status properties for each service
 const servicesSchema = new Schema(
   {
     _id: { type: String, default: uuid.v1 },
