@@ -9,12 +9,20 @@ PLEASE MAKE SURE YOU HAVE THE FOLLOWING UNDER THE "backend" FOLDER
     PORT = 27017
     ORG = "1"
 
+2. open a new terminal
+3. enter "cd backend"
+4. enter "npm install"
 
 PLEASE ALSO MAKE SURE YOU HAVE THE FOLLOWING UNDER THE "frontend" FOLDER
 
-2. .env file with parameters:
+1. .env file with parameters:
 
     VITE_ROOT_API = http://localhost:27017
+
+2. open a new terminal
+3. enter "cd frontend"
+4. enter "npm install"
+
 
 
 
