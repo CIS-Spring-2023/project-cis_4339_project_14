@@ -181,7 +181,7 @@ export default {
                   class="material-icons"
                   >library_add_check</span
                 >
-                Services
+                Services View/Edit
               </router-link>
             </li>
             <li>
